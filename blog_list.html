@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Own Blog</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">My Own Blog</a></h1>
+    </header>
+
+    {{post_objects}}
+    <hr />
+    <br />
+    {% for post_obj in post_objects %}
+    <article>
+      <time>published: {{post_obj.created_date}}</time>
+      <h2><a href="">{{post_obj.title}}</a></h2>
+      <p>{{post_obj.text}}</p>
+    </article>
+    <hr />
+    {{post_obj.postadditionaldescription_set.al.0.description}}
+    {{post_obj.postadditionaldescription_set.al.0.image}} {% endfor %}
+  </body>
+</html>
